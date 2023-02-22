@@ -1,0 +1,44 @@
+.header {
+  background-color: #f6f4f5;
+  border-bottom: 1px solid rgba(202, 202, 214, 1);
+}
+.nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  height: 80px;
+
+  &__list {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__link {
+    @include text($font-primary, 400, 16px, 22px, $gray);
+    text-transform: uppercase;
+  }
+
+  &__logo {
+    justify-self: center;
+  }
+  &__basket {
+    justify-self: end;
+    position: relative;
+    margin-right: 5px;
+  }
+  /**Use when smth in the basket!
+  &__basket--on span {
+    width: 16px;
+    height: 16px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 12px;
+  }*/
+}

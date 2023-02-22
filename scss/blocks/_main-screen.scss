@@ -1,0 +1,52 @@
+.main-screen {
+  background-image: url("./images/bg-img.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  height: calc(100vh - 81px);
+
+  &__title {
+    margin: 0;
+    padding-top: 16%;
+    @include text($font-primary, 400, 96px, 110px, $gray);
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    @include text($font-primary, 400, 36px, 41px, $gray);
+    margin-bottom: 5px;
+  }
+
+  &__text {
+    @include text($font-primary, 400, 13px, 15px, $gray);
+    margin-bottom: 50px;
+  }
+
+  &__subtext {
+    @include text($font-primary, 400, 15px, 13px, $gray);
+  }
+}
+
+.buy__btn {
+  height: 60px;
+  background: $gradient;
+  display: inline-flex;
+  cursor: pointer;
+  align-items: center;
+  border: none;
+  outline: none;
+  padding: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+
+  &-text {
+    padding: 21px 110px;
+    @include text($font-primary, 700, 16px, 18px, $white-btn);
+  }
+
+  &-price {
+    padding: 20px 109px;
+    @include text($font-primary, 700, 16px, 18px, $gray);
+    background-color: #f6f4f5;
+  }
+}

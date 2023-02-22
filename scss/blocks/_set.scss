@@ -1,0 +1,33 @@
+.set {
+  margin-bottom: 100px;
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 30px;
+    column-gap: 20px;
+  }
+
+  &__item-name {
+    margin-top: 10px;
+    @include text($font-primary, 400, 16px, 18px, $gray);
+  }
+}
+
+.item1 {
+  grid-row: 1/-1;
+}
+
+.item-text {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: 36px;
+}

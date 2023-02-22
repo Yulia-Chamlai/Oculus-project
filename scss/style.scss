@@ -1,0 +1,31 @@
+@font-face {
+  font-family: "Helvetica";
+  src: url(./fonts/Helvetica.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url(./fonts/Helvetica-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+@import "base";
+@import "reset";
+@import "vars";
+@import "mixins";
+@import "./blocks/header";
+@import "./blocks/main-screen";
+@import "./blocks/features";
+@import "./blocks/game";
+@import "./blocks/promo";
+@import "./blocks/set";
+@import "./blocks/demo";
+@import "./blocks/accessories";
+@import "./blocks/subscription";
+@import "./blocks/footer";
+/*.nav__link {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}*/

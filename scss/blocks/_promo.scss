@@ -1,0 +1,47 @@
+.promo {
+  overflow-x: hidden;
+  margin-bottom: 109px;
+  position: relative;
+  min-height: 502px;
+  pointer-events: none;
+  &__text {
+    width: 1750px; //to make line full without cutting
+    @include text($font-primary, 700, 420px, 500px, $gray);
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    opacity: 10%;
+    text-align: center;
+
+    animation: line 8s linear 1s infinite;
+  }
+  @keyframes line {
+    from {
+      transform: translateX(100%);
+      transform-origin: left center;
+    }
+    to {
+      transform: translateX(-105%);
+      transform-origin: right center;
+    }
+  }
+
+  &__inner {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 53px;
+  }
+
+  &__img {
+    margin-bottom: 30px;
+  }
+  &__btn {
+    margin-bottom: 10px;
+  }
+  &__desc {
+    @include text($font-primary, 400, 13px, 15px, $gray);
+  }
+}

@@ -1,0 +1,108 @@
+.features {
+  padding: 100px 0;
+  &__titles {
+    display: flex;
+  }
+
+  &__text {
+    max-width: 329px;
+    @include text($font-primary, 400, 36px, 41px, $gray);
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+}
+
+.feature {
+  &__title {
+    margin-bottom: 84px;
+    flex: 0 0 300px;
+  }
+}
+.section {
+  &__title {
+    @include text($font-primary, 400, 16px, 18px, $gray);
+    text-transform: uppercase;
+  }
+}
+.tabs {
+  display: flex;
+  position: relative;
+
+  &__btn {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn-item {
+    min-width: 300px;
+    @include text($font-secondary, 700, 16px, 18px, $gray);
+    margin-bottom: 20px;
+    align-self: start;
+    background: transparent;
+    text-align: start;
+    padding-right: 10px;
+    &--active {
+      color: $black;
+    }
+  }
+
+  &__content {
+    min-height: 300px;
+  }
+
+  &__content-item {
+    display: grid;
+    grid-template-columns: auto 280px;
+    grid-template-rows: auto 150px;
+    gap: 47px;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.3s ease;
+    &--active {
+      opacity: 1;
+    }
+  }
+
+  &__content-img {
+    grid-row: 1/-1;
+    align-self: stretch;
+  }
+
+  &__content-info {
+    h3 {
+      @include text($font-primary, 400, 24px, 27px, $gray);
+      margin-bottom: 10px;
+    }
+    p {
+      @include text($font-primary, 400, 16px, 18px, $gray);
+    }
+  }
+}
+.video {
+  background-image: url("./images/feat-video.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: start;
+  &__btn {
+    background: transparent;
+    width: 280px;
+    height: 150px;
+    display: inline-flex;
+    align-items: end;
+    padding-left: 22px;
+    img {
+      border-radius: 50%;
+    }
+  }
+  span {
+    padding: 9px 0 18px 0;
+    @include text($font-primary, 400, 13px, 15px, $white-btn);
+  }
+}

@@ -1,0 +1,78 @@
+.game {
+  margin-bottom: 95px;
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(4, 300px);
+    margin-top: 50px;
+  }
+
+  &__info-subtitle {
+    @include text($font-primary, 400, 36px, 41px, $gray);
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  &__info-text {
+    @include text($font-primary, 400, 16px, 18px, $gray);
+    margin-bottom: 30px;
+    padding-right: 10px;
+  }
+
+  &__info-link {
+    display: inline-block;
+    padding: 16px 48px;
+    border: 1px solid;
+    border-image: $gradient 1;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 18px;
+  }
+
+  &__content {
+    display: grid;
+    grid-auto-rows: 1/-1;
+    grid-template-columns: repeat(3, 300px);
+  }
+
+  &__item {
+    padding: 20px 15px 20px 20px;
+    border: 1px solid;
+    border-image: $gradient 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item-img {
+    margin-bottom: 10px;
+    img {
+      width: 260px;
+      height: 280px;
+    }
+  }
+
+  &__item-title {
+    white-space: nowrap;
+    @include text($font-primary, 400, 24px, 28px, $black);
+    margin-bottom: 10px;
+  }
+
+  &__item-text {
+    @include text($font-primary, 400, 16px, 18px, $gray);
+    margin-bottom: 40px;
+    flex-grow: 1;
+  }
+
+  &__item-link {
+    font-weight: 400;
+    font-size: 16px;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
