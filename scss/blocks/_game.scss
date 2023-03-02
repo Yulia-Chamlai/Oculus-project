@@ -2,7 +2,7 @@
   margin-bottom: 95px;
   &__inner {
     display: grid;
-    grid-template-columns: repeat(4, 300px);
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 50px;
   }
 
@@ -32,12 +32,6 @@
     text-transform: uppercase;
     font-weight: 700;
     line-height: 18px;
-  }
-
-  &__content {
-    display: grid;
-    grid-auto-rows: 1/-1;
-    grid-template-columns: repeat(3, 300px);
   }
 
   &__item {

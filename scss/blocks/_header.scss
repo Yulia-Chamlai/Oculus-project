@@ -11,11 +11,45 @@
   &__list {
     display: flex;
     gap: 20px;
+    transition: transform 0.7s ease;
+    &.active {
+      transform: translateX(0);
+    }
   }
 
   &__link {
     @include text($font-primary, 400, 16px, 22px, $gray);
     text-transform: uppercase;
+  }
+  &__burger-menu {
+    display: none;
+    position: relative;
+    span {
+      display: inline-block;
+      width: 30px;
+      height: 2px;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      background: $black;
+      transition: 0.3s all ease-in-out;
+    }
+  }
+  &__burger-menu::before,
+  &__burger-menu::after {
+    content: "";
+    position: absolute;
+    background-color: $black;
+    width: 30px;
+    height: 2px;
+    left: 0;
+    transition: 0.3s all ease-in-out;
+  }
+  &__burger-menu::before {
+    top: 20px;
+  }
+  &__burger-menu::after {
+    bottom: 14px;
   }
 
   &__logo {
@@ -26,7 +60,7 @@
     position: relative;
     margin-right: 5px;
   }
-  /**Use when smth in the basket!
+  /**Use when smth in the basket!=============
   &__basket--on span {
     width: 16px;
     height: 16px;

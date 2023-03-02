@@ -426,7 +426,7 @@ template {
       -ms-flex-align: center;
           align-items: center;
   height: 80px;
-  /**Use when smth in the basket!
+  /**Use when smth in the basket!=============
   &__basket--on span {
     width: 16px;
     height: 16px;
@@ -447,6 +447,14 @@ template {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  -webkit-transition: -webkit-transform 0.7s ease;
+  transition: -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease;
+  transition: transform 0.7s ease, -webkit-transform 0.7s ease;
+}
+.nav__list.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 .nav__link {
   font-family: "Helvetica", sans-serif;
@@ -455,6 +463,38 @@ template {
   line-height: 22px;
   color: #5c5c5e;
   text-transform: uppercase;
+}
+.nav__burger-menu {
+  display: none;
+  position: relative;
+}
+.nav__burger-menu span {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #070707;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+.nav__burger-menu::before, .nav__burger-menu::after {
+  content: "";
+  position: absolute;
+  background-color: #070707;
+  width: 30px;
+  height: 2px;
+  left: 0;
+  -webkit-transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
+}
+.nav__burger-menu::before {
+  top: 20px;
+}
+.nav__burger-menu::after {
+  bottom: 14px;
 }
 .nav__logo {
   justify-self: center;
@@ -564,7 +604,7 @@ template {
   margin-bottom: 20px;
 }
 
-.feature__title {
+.features__title {
   margin-bottom: 84px;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 300px;
@@ -695,7 +735,7 @@ template {
 }
 .game__inner {
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: repeat(4, 1fr);
   margin-top: 50px;
 }
 .game__info-subtitle {
@@ -734,11 +774,6 @@ template {
   text-transform: uppercase;
   font-weight: 700;
   line-height: 18px;
-}
-.game__content {
-  display: grid;
-  grid-auto-rows: 1/-1;
-  grid-template-columns: repeat(3, 300px);
 }
 .game__item {
   padding: 20px 15px 20px 20px;
@@ -795,14 +830,18 @@ template {
   margin-bottom: 109px;
   position: relative;
   min-height: 502px;
-  pointer-events: none;
 }
 .promo__text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -4px;
+  z-index: -1;
   width: 1750px;
   font-family: "Helvetica", sans-serif;
   font-weight: 700;
   font-size: 420px;
-  line-height: 500px;
+  line-height: 387px;
   color: #5c5c5e;
   background: -webkit-gradient(linear, left top, left bottom, from(#bc10d8), to(rgba(80, 0, 250, 0.93)));
   background: linear-gradient(top, #bc10d8, rgba(80, 0, 250, 0.93));
@@ -843,16 +882,21 @@ template {
   }
 }
 .promo__inner {
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 53px;
 }
 .promo__img {
   margin-bottom: 30px;
 }
+.promo__img img {
+  width: 347px;
+  height: 334px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .promo__btn {
+  white-space: nowrap;
   margin-bottom: 10px;
 }
 .promo__desc {
@@ -914,7 +958,7 @@ template {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 63px;
+  top: 12%;
   z-index: 4;
 }
 .demo__link {
@@ -1142,8 +1186,343 @@ footer .footer__nav-link img {
   border-radius: 50%;
 }
 
-/*.nav__link {
-  background: $gradient;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}*/
+/*Adaptive layout*/
+@media (max-width: 1230px) {
+  .game__inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .game__item-img img {
+    width: 100%;
+  }
+
+  .set__inner {
+    grid-template-columns: 2fr 1fr;
+  }
+  .set .item-text {
+    -ms-flex-item-align: center;
+        align-self: center;
+    font-size: 28px;
+  }
+
+  .demo__text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .accessories__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+@media (max-width: 1150px) {
+  .footer__nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media (max-width: 850px) {
+  .nav__burger-menu {
+    display: block;
+  }
+
+  .nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 60px;
+  }
+  .nav__logo-link {
+    max-width: 180px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 0 10px;
+  }
+  .nav__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+    position: absolute;
+    text-align: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 65px;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+
+  .main-screen {
+    height: calc(700px - 81px);
+  }
+  .main-screen__title {
+    font-size: 66px;
+    padding-top: 10%;
+  }
+  .main-screen__btn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+    white-space: nowrap;
+  }
+
+  .features {
+    padding: 50px 0;
+  }
+  .features__text {
+    font-size: 33px;
+  }
+
+  .tabs {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .tabs__btn {
+    -webkit-column-count: 2;
+            column-count: 2;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: 150px;
+  }
+
+  .game {
+    margin-bottom: 50px;
+  }
+
+  .set {
+    margin-bottom: 50px;
+  }
+  .set__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .demo__text {
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .subscription__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer__nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 10px;
+  }
+  .footer__nav-social {
+    gap: 30px;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 650px) {
+  .features__titles {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .features__title {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+    margin-bottom: 50px;
+  }
+  .features__text {
+    font-size: 26px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tabs__btn {
+    -webkit-column-count: 1;
+            column-count: 1;
+    height: auto;
+  }
+  .tabs__content {
+    height: auto;
+  }
+  .tabs__content-item {
+    grid-template-columns: 1fr;
+  }
+  .tabs__content-item--active {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: unset;
+    position: static;
+  }
+  .tabs__content-info {
+    padding-bottom: 10px;
+  }
+
+  .game__info-subtitle {
+    font-size: 26px;
+  }
+  .game__inner {
+    grid-template-columns: 1fr;
+  }
+  .game__item-title {
+    font-size: 22px;
+  }
+
+  .promo {
+    margin-bottom: 0;
+  }
+  .promo__btn {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  .promo__btn-text {
+    padding: 16px 100px;
+  }
+  .promo__btn-price {
+    padding: 16px 100px;
+  }
+
+  .set__inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+  }
+  .set__item img {
+    width: 100%;
+  }
+
+  .demo__text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .demo__link {
+    bottom: 30px;
+  }
+
+  .accessories {
+    margin: 50px 0;
+  }
+  .accessories__subtitle {
+    font-size: 26px;
+  }
+  .accessories__inner {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 576px) {
+  .main-screen__info {
+    text-align: center;
+  }
+  .main-screen__title {
+    font-size: 36px;
+  }
+  .main-screen__subtitle {
+    font-size: 22px;
+  }
+  .main-screen__btn {
+    max-width: 280px;
+  }
+  .main-screen__btn-text {
+    padding: 16px 100px;
+  }
+  .main-screen__btn-price {
+    padding: 16px 95px;
+  }
+
+  .promo__text {
+    font-size: 280px;
+    top: -40px;
+  }
+  .promo__img {
+    width: 100%;
+    text-align: center;
+    max-width: 300px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+  .promo__img img {
+    height: auto;
+  }
+
+  .demo__text {
+    font-size: 10px;
+    line-height: 12px;
+  }
+  .demo__text br {
+    display: none;
+  }
+  .demo__link {
+    bottom: 30px;
+    width: 35px;
+    height: 35px;
+    bottom: 20px;
+    font-weight: 400;
+  }
+
+  .accessories__subtitle {
+    font-size: 22px;
+  }
+  .accessories__inner {
+    grid-template-columns: minmax(280px, auto);
+  }
+  .accessories__item-title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0;
+  }
+  .accessories__item-btn {
+    min-width: 100%;
+  }
+
+  .footer {
+    margin-bottom: 30px;
+  }
+}

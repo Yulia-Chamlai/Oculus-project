@@ -1,4 +1,4 @@
-"use strict";
+("use strict");
 const tabItem = document.querySelectorAll(".tabs__btn-item"); //find all tabs
 const tabContent = document.querySelectorAll(".tabs__content-item"); //find all contents
 
@@ -21,3 +21,10 @@ function open(evt) {
     .querySelector(`#${button}`)
     .classList.add("tabs__content-item--active"); //find that tab which is active and add it the necessary contant
 }
+//Burger-menu====================
+const burgerBtn = document.querySelector(".nav__burger-menu");
+const burgerNav = document.querySelector(".nav__list");
+
+burgerBtn.addEventListener("click", function () {
+  burgerNav.classList.toggle("active");
+});

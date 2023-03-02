@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,8 +11,11 @@
     <header class="header">
       <div class="container">
         <nav class="nav">
+          <div class="nav__burger-menu">
+            <span></span>
+          </div>
           <div class="nav__menu">
-            <ul class="nav__list">
+            <ul class="nav__list" onclick="burgerBtn()">
               <li class="nav__item"><a class="nav__link" href="#">SHOP</a></li>
               <li class="nav__item"><a class="nav__link" href="#">GAMES</a></li>
               <li class="nav__item">
@@ -20,6 +23,7 @@
               </li>
             </ul>
           </div>
+
           <div class="nav__logo">
             <a class="nav__logo-link" href="#">
               <img src="./images/logo.svg" alt="logo" />
@@ -32,6 +36,7 @@
         </nav>
       </div>
     </header>
+
     <main>
       <section class="main-screen">
         <div class="container">
@@ -51,10 +56,11 @@
           </div>
         </div>
       </section>
+
       <section class="features">
         <div class="container">
           <div class="features__titles">
-            <h2 class="feature__title section__title">PRODUCT FEATURES</h2>
+            <h2 class="features__title section__title">PRODUCT FEATURES</h2>
             <p class="features__text">Easy to set up and safe to use</p>
           </div>
           <div class="tabs">
@@ -215,6 +221,7 @@
           </div>
         </div>
       </section>
+
       <section class="game">
         <div class="container">
           <h2 class="game__title section__title">GAMES</h2>
@@ -227,45 +234,45 @@
               </p>
               <a class="game__info-link" href="#">SEE ALL GAMES</a>
             </div>
-            <div class="game__content">
-              <div class="game__item">
-                <div class="game__item-img">
-                  <img src="./images/game/game1.jpg" alt="game" />
-                </div>
-                <h3 class="game__item-title">Blade & Sorcery: Nomad</h3>
-                <p class="game__item-text">
-                  Step into a medieval fantasy sandbox that uses phisics to
-                  serve up some of the most realistic combat in VR
-                </p>
-                <a class="game__item-link" href="#">see more</a>
+
+            <div class="game__item">
+              <div class="game__item-img">
+                <img src="./images/game/game1.jpg" alt="game" />
               </div>
-              <div class="game__item">
-                <div class="game__item-img">
-                  <img src="./images/game/game2.jpg" alt="game" />
-                </div>
-                <h3 class="game__item-title">Population: One</h3>
-                <p class="game__item-text">
-                  Climb anything. Fight everywhere. Experience battle royale
-                  only possible in VR
-                </p>
-                <a class="game__item-link" href="#">see more</a>
+              <h3 class="game__item-title">Blade & Sorcery: Nomad</h3>
+              <p class="game__item-text">
+                Step into a medieval fantasy sandbox that uses phisics to serve
+                up some of the most realistic combat in VR
+              </p>
+              <a class="game__item-link" href="#">see more</a>
+            </div>
+            <div class="game__item">
+              <div class="game__item-img">
+                <img src="./images/game/game2.jpg" alt="game" />
               </div>
-              <div class="game__item">
-                <div class="game__item-img">
-                  <img src="./images/game/game3.jpg" alt="game" />
-                </div>
-                <h3 class="game__item-title">Supernatural</h3>
-                <p class="game__item-text">
-                  Box, Flow, Meditate and Stretch with real coaches in stunning
-                  destinations from around the world. Enjoy new workouts every
-                  day.
-                </p>
-                <a class="game__item-link" href="#">see more</a>
+              <h3 class="game__item-title">Population: One</h3>
+              <p class="game__item-text">
+                Climb anything. Fight everywhere. Experience battle royale only
+                possible in VR
+              </p>
+              <a class="game__item-link" href="#">see more</a>
+            </div>
+            <div class="game__item">
+              <div class="game__item-img">
+                <img src="./images/game/game3.jpg" alt="game" />
               </div>
+              <h3 class="game__item-title">Supernatural</h3>
+              <p class="game__item-text">
+                Box, Flow, Meditate and Stretch with real coaches in stunning
+                destinations from around the world. Enjoy new workouts every
+                day.
+              </p>
+              <a class="game__item-link" href="#">see more</a>
             </div>
           </div>
         </div>
       </section>
+
       <section class="promo">
         <div class="promo__text">OCULUS</div>
         <div class="promo__inner">
@@ -279,6 +286,7 @@
           <p class="promo__desc">Meta Quest 2 is for ages 13+</p>
         </div>
       </section>
+
       <section class="set">
         <div class="container">
           <h2 class="set__title section__title">IN THE BOX</h2>
@@ -305,6 +313,7 @@
           </div>
         </div>
       </section>
+
       <section class="demo">
         <div class="container">
           <img class="demo__img" src="./images/demo-img.jpg" alt="demo" />
@@ -315,6 +324,7 @@
           <a class="demo__link" href="#">GO</a>
         </div>
       </section>
+
       <section class="accessories">
         <div class="container">
           <h2 class="accessories__title section__title">ACCESSORIES</h2>
@@ -370,6 +380,7 @@
           </div>
         </div>
       </section>
+
       <section class="subscription">
         <div class="container">
           <div class="subscription__title">Get news and updates</div>
@@ -398,6 +409,7 @@
           </div>
         </div>
       </section>
+
       <footer class="footer">
         <div class="container">
           <nav class="footer__nav nav">

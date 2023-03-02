@@ -3,17 +3,21 @@
   margin-bottom: 109px;
   position: relative;
   min-height: 502px;
-  pointer-events: none;
+
   &__text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -4px;
+    z-index: -1;
     width: 1750px; //to make line full without cutting
-    @include text($font-primary, 700, 420px, 500px, $gray);
+    @include text($font-primary, 700, 420px, 387px, $gray);
     background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-transform: uppercase;
     opacity: 10%;
     text-align: center;
-
     animation: line 8s linear 1s infinite;
   }
   @keyframes line {
@@ -28,17 +32,21 @@
   }
 
   &__inner {
+    max-width: 600px;
+    margin: 0 auto;
     text-align: center;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 53px;
   }
 
   &__img {
     margin-bottom: 30px;
+    img {
+      width: 347px;
+      height: 334px;
+      object-fit: cover;
+    }
   }
   &__btn {
+    white-space: nowrap;
     margin-bottom: 10px;
   }
   &__desc {
