@@ -453,8 +453,6 @@ template {
   transition: transform 0.7s ease, -webkit-transform 0.7s ease;
 }
 .nav__list.active {
-  -webkit-transition: 1s all ease;
-  transition: 1s all ease;
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -505,10 +503,6 @@ template {
   justify-self: end;
   position: relative;
   margin-right: 5px;
-}
-
-.nav__burger-menu .active span {
-  opacity: 0;
 }
 
 .main-screen {
@@ -1138,7 +1132,7 @@ input {
   height: 55px;
   border: none;
   border-bottom: 1px solid #cacad6;
-  padding: 0 70px 0 5px;
+  padding-right: 70px;
 }
 input::-webkit-input-placeholder {
   font-family: "Helvetica", sans-serif;

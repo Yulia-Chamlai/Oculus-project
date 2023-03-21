@@ -48,7 +48,7 @@ input {
   height: 55px;
   border: none;
   border-bottom: 1px solid $l-gray;
-  padding-right: 70px;
+  padding: 0 70px 0 5px;
   &::placeholder {
     @include text($font-primary, 400, 13px, 15px, $l-gray);
   }

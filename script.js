@@ -25,6 +25,13 @@ function open(evt) {
 const burgerBtn = document.querySelector(".nav__burger-menu");
 const burgerNav = document.querySelector(".nav__list");
 
-burgerBtn.addEventListener("click", function () {
+burgerBtn.addEventListener("click", () => {
+  burgerBtn.classList.toggle("active");
   burgerNav.classList.toggle("active");
 });
+document.querySelectorAll(".nav__link").forEach((n) =>
+  n.addEventListener("click", () => {
+    burgerBtn.classList.remove("active");
+    burgerNav.classList.remove("active");
+  })
+);
